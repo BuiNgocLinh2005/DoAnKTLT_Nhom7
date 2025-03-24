@@ -1,5 +1,5 @@
 museum_configs = {
-    "BTLS": {
+    "history": {
         "urls": [
             {
                 "url": "https://www.baotanglichsutphcm.com.vn/",
@@ -18,7 +18,7 @@ museum_configs = {
             "ket_luan": "div.conclusion"
         }
     },
-    "HCMC": {
+    "hcm_city": {
         "urls": [
             {
                 "url": "https://hcmc-museum.edu.vn/",

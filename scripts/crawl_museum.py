@@ -69,7 +69,7 @@ def crawl_museum(museum_name):
     return data
 
 # Crawl và lưu dữ liệu vào file JSON
-for museum in ["BTLS", "HCMC"]:
+for museum in ["history", "hcm_city"]:
     museum_data = crawl_museum(museum)
     if museum_data:
         with open(f"database/{museum}.json", "w", encoding="utf-8") as f:

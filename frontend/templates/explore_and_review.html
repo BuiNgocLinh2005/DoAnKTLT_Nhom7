@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="explore_and_review.css">
+    <link rel="stylesheet" href="themify-icons.css">
     <script>
         async function fetchMuseumData() {
             const urlParams = new URLSearchParams(window.location.search);
@@ -34,36 +34,90 @@
         }
     </script>
 </head>
-<body>
+<body onload="fetchMuseumData()">
     <!-- .wrapper ra div class
         #wrapper ra div id-->
     <!-- ctrl + d để chọn và sửa nhiều cái cùng lúc
      vd sửa id thành class -->
     <div id="main">
-        <!-- Begin: Nav -->
-        <div id="header">
-            <ul id="nav">
-                <li><a href="">baotangsaigon.com</a></li>
-                <li>
-                    <a href="">Khám phá & Review bảo tàng</a>
-                    <ul class="subnav">
-                        <li><a href="">bt1</a></li>
-                        <li><a href="">bt2</a></li>
-                        <li><a href="">bt3</a></li>
+    <!-- Header -->
+    <header class="header">
+        <a href="#" class="logo">🏛 baotangsaigon.com</a>
+        <nav class="nav">
+        <div class="nav-center">
+          <div class="dropdown">
+            <button class="dropbtn">Khám phá & Review bảo tàng ▼</button>
+            <div class="dropdown-content">
+                <!-- Các cột menu giữ nguyên -->
+                <div class="menu-column">
+                    <h3>BẢO TÀNG LỊCH SỬ</h3>
+                    <ul>
+                        <li><a href="home11.html">🏛 Bảo tàng Lịch sử Thành phố Hồ Chí Minh</a></li>
+                        <li><a href="home12.html">🏛 Bảo tàng Thành phố Hồ Chí Minh</a></li>
+                        <li><a href="home13.html">🏛 Bảo tàng Hồ Chí Minh - Chi nhánh TP.HCM</a></li>
+                        <li><a href="home14.html">🏛 Bảo tàng Chiến dịch Hồ Chí Minh</a></li>
                     </ul>
-                </li>
-                <li><a href="">Đăng ký/Đăng nhập</a></li>
-            </ul>
-            <!-- End: Nav -->
-
-        <!-- Begin: Search button -->
-        <div class="search-btn">
-            <i class="search-icon ti-search"></i>
+                </div>
+                <div class="menu-column">
+                    <h3>BẢO TÀNG CHIẾN TRANH & QUÂN SỰ</h3>
+                    <ul>
+                        <li><a href="home15.html">🏛 Bảo tàng Chứng tích Chiến tranh</a></li>
+                        <li><a href="home16.html">🏛 Bảo tàng Lực lượng Vũ trang Miền Đông Nam Bộ</a></li>
+                        <li><a href="home17.html">🏛 Bảo tàng Không quân Phía Nam</a></li>
+                    </ul>
+                </div>
+                <div class="menu-column">
+                    <h3>BẢO TÀNG NGHỆ THUẬT</h3>
+                    <ul>
+                        <li><a href="home18.html">🏛 Bảo tàng Mỹ thuật Thành phố Hồ Chí Minh</a></li>
+                        <li><a href="home19.html">🏛 Bảo tàng Nghệ thuật 3D Artinus</a></li>
+                        <li><a href="home110.html">🏛 Bảo tàng Nghệ thuật Quang San</a></li>
+                    </ul>
+                </div>
+                <div class="menu-column">
+                    <h3>BẢO TÀNG VĂN HÓA & CON NGƯỜI</h3>
+                    <ul>
+                        <li><a href="home111.html">🏛 Bảo tàng Áo Dài</a></li>
+                        <li><a href="home112.html">🏛 Bảo tàng Phụ nữ Nam Bộ</a></li>
+                        <li><a href="home113.html">🏛 Bảo tàng Tôn Đức Thắng</a></li>
+                    </ul>
+                </div>
+                <div class="menu-column">
+                    <h3>BẢO TÀNG KHOA HỌC & TỰ NHIÊN</h3>
+                    <ul>
+                        <li><a href="home114.html">🏛 Bảo tàng Y học Cổ truyền Việt Nam (FITO Museum)</a></li>
+                        <li><a href="home115.html">🏛 Bảo tàng Sâm Ngọc Linh</a></li>
+                    </ul>
+                </div>
+                <div class="menu-column">
+                    <h3>BẢO TÀNG CHUYÊN NGÀNH</h3>
+                    <ul>
+                        <li><a href="home116.html">🏛 Bảo tàng Công an Nhân dân</a></li>
+                    </ul>
+                </div>
+                <div class="menu-column">
+                    <h3>BẢO TÀNG TÔN GIÁO</h3>
+                    <ul>
+                        <li><a href="home117.html">🏛 Bảo tàng Tôn giáo Nam Bộ</a></li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+          </div>
+          <div class="user-info">
+            <img src="png/anh-chan-dung-nguoi-co-gai-trong-bo-vay-trang.jpg" alt="Avatar" class="avatar">
+            <span class="username">Tranthiyennhi</span>
         </div>
-        <!-- End: Search button -->
+            <a href="#" class="login-btn">Đăng ký/Đăng nhập</a>
+        </nav>
+    </header>
 
-        </div>
+    <!-- Banner -->
+    <section class="banner-container">
+      <img src="png/museum-banner.png" alt="Bảo tàng">
+    </section>
 
+    <!-- Slider -->
         <div id="slider">
             <div class="text-content">
                 <h2 class="text-heading">BẢO TÀNG THÀNH PHỐ HỒ CHÍ MINH</div>
@@ -207,6 +261,8 @@
 
         </div>
     </div>
+
+    <!-- Script 1 -->
     <script>
         const slider = document.getElementById("artifact-slider");
     
@@ -218,6 +274,47 @@
             slider.scrollBy({ left: -200, behavior: "smooth" });
         }
     </script>
+
+    <!-- Script 2 -->
+    <script>
+        document.getElementById("submit-btn").addEventListener("click", function() {
+            fetch('/check-login')
+                .then(response => response.json())
+                .then(data => {
+                    if (!data.logged_in) {
+                        alert("Bạn cần đăng nhập để bình luận!");
+                        window.location.href = "/login";
+                    } else {
+                        let commentText = document.getElementById("new-comment").value.trim();
+                        if (!commentText) {
+                            alert("Bình luận không được để trống!");
+                            return;
+                        }
+    
+                        fetch('/comments', {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                museum_name: "Tên bảo tàng",  // Thay bằng giá trị động nếu cần
+                                comment: commentText
+                            })
+                        })
+                        .then(response => response.json())
+                        .then(result => {
+                            if (result.message) {
+                                alert("Bình luận đã được gửi!");
+                                location.reload(); // Tải lại trang để cập nhật bình luận
+                            } else {
+                                alert(result.error);
+                            }
+                        });
+                    }
+                });
+        });
+    </script>
+    </form> 
     
 </body>
 </html>
