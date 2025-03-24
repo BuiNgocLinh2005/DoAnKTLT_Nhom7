@@ -6,6 +6,39 @@
     <title>Bảo Tàng Sài Gòn</title>
     <link rel="stylesheet" href="styles2.css">
 </head>
+
+<script>
+    async function checkLoginStatus() {
+        const response = await fetch("http://localhost:5000/user/status");
+        const data = await response.json();
+
+        const loginBtn = document.querySelector(".login-btn");
+        const userInfo = document.querySelector(".user-info");
+
+        if (data.logged_in) {
+            // Đã đăng nhập -> Hiện avatar & username, ẩn nút đăng nhập
+            loginBtn.style.display = "none";
+            userInfo.innerHTML = `
+                <img src="png/${data.avatar}" alt="Avatar" class="avatar">
+                <span class="username">${data.username}</span>
+                <button onclick="logout()" class="logout-btn">Đăng xuất</button>
+            `;
+        } else {
+            // Chưa đăng nhập -> Hiện nút đăng nhập, ẩn avatar & username
+            loginBtn.style.display = "block";
+            userInfo.innerHTML = "";
+        }
+    }
+
+    function logout() {
+        fetch("http://localhost:5000/user/logout", { method: "POST" }).then(() => {
+            location.reload();  // Reload lại trang sau khi đăng xuất
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", checkLoginStatus);
+</script>
+
 <body>
 
     <!-- Header -->

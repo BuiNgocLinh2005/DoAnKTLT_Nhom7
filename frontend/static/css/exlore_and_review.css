@@ -24,38 +24,136 @@ html {
 */
 
 
-#main {
-
-}
-
-#header {
+/* Header */
+.header {
+    background-color: #8B0000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
     position: fixed;
+    width: 100%;
     top: 0;
-    left: 0;
-    right: 0;
-    height: 46px;
-    background-color: #720606;
-    z-index: 1000;
+    z-index: 999; 
 }
 
-#nav {
-    display: inline-block;
-}
-
-#nav li {
-    display: inline-block;
-}
-
-#nav li a {
-    color: #fff;
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
     text-decoration: none;
-    line-height: 46px;
-    padding: 0 24px;
-    display: block;
 }
 
-#nav .subnav {
-    display: none;
+.nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+.nav-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background: none;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.dropdown-content {
+    display: none; /* Ẩn đi trước */
+    position: absolute;
+    background-color: #8B0000;
+    color: white;
+    width: 900px; /* Điều chỉnh chiều ngang phù hợp */
+    padding: 20px;
+    z-index: 100;
+    left: 50%;
+    transform: translateX(-50%);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+    display: grid;
+}
+
+.menu-column {
+    width: 100%;
+}
+
+.menu-column h3 {
+    font-size: 14px;
+    border-bottom: 1px solid white;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.menu-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-column ul li {
+    padding: 5px 0;
+}
+.dropdown-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dropdown-content ul li {
+    padding: 5px 0;
+    color: white; /* Đặt màu chữ thành trắng */
+}
+
+.dropdown-content ul li a {
+    color: white; /* Nếu các mục menu là thẻ <a>, đảm bảo chúng cũng có màu trắng */
+    text-decoration: none; /* Bỏ gạch chân nếu cần */
+}
+
+.dropdown-content ul li a:hover {
+    color: #f0f0f0; /* Màu sáng hơn khi hover để dễ đọc hơn */
+}
+
+
+/* Login Button */
+.login-btn {
+    background-color: white;
+    color: #8B0000;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.login-btn:hover {
+    background-color: #f5f5f5;
+}
+
+/* Banner */
+.banner-container {
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+}
+
+.banner-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 #header .search-btn {
@@ -316,6 +414,26 @@ textarea {
 
 
 
-#footer {
+/* Footer */
+.footer {
+    background-color: #7B0000;
+    padding: 40px 0;
+    text-align: center;
+    color: white;
+    margin-top: 100px;
+}
 
+.footer-title a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 15px;
 }

@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Bảo tàng TP.HCM",
+        "location": "65 Lý Tự Trọng, Quận 1",
+        "description": "Bảo tàng nổi bật với kiến trúc cổ kính..."
+    },
+    {
+        "name": "Bảo tàng Mỹ thuật",
+        "location": "97 Phó Đức Chính, Quận 1",
+        "description": "Nơi trưng bày các tác phẩm nghệ thuật quý giá..."
+    }
+]

@@ -6,6 +6,33 @@
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
+    <script>
+        async function fetchMuseumData() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const museumId = urlParams.get("id"); // Lấy ID bảo tàng từ URL
+
+            if (!museumId) {
+                document.getElementById("content").innerHTML = "<p>Không tìm thấy bảo tàng!</p>";
+                return;
+            }
+
+            const response = await fetch(`http://localhost:5000/museum/${museumId}`);
+            const data = await response.json();
+
+            if (data.error) {
+                document.getElementById("content").innerHTML = `<p>${data.error}</p>`;
+                return;
+            }
+
+            // Hiển thị dữ liệu
+            document.getElementById("museum-name").innerText = data.name;
+            document.getElementById("museum-intro").innerText = data.introduction;
+            document.getElementById("museum-architecture").innerText = data.architecture;
+            document.getElementById("museum-exhibits").innerText = data.exhibits;
+            document.getElementById("museum-services").innerText = data.services;
+            document.getElementById("museum-conclusion").innerText = data.conclusion;
+        }
+    </script>
 </head>
 <body>
     <!-- .wrapper ra div class

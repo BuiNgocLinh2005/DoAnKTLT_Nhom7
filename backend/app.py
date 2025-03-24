@@ -79,13 +79,21 @@ def login():
     conn.close()
     
     if user and check_password_hash(user["password"], password):
-        session['user'] = email
-        return jsonify({"redirect": url_for('home')})  # Chuyển hướng về home
+        session["user"] = email
+        session["avatar"] = "default-avatar.jpg"  # Giả lập avatar, có thể lưu vào DB
+        
+        return jsonify({
+            "message": "Đăng nhập thành công",
+            "username": email,
+            "avatar": "default-avatar.jpg"
+        })
+    
     return jsonify({"error": "Sai email hoặc mật khẩu!"}), 401
 
-@app.route("/logout")
+@app.route("/logout", methods=["POST"])
 def logout():
-    session.pop('user', None)
+    session.pop("user", None)
+    session.pop("avatar", None)
     return redirect(url_for('home'))  # Chuyển hướng về trang chủ sau khi đăng xuất
 
 @app.route("/reviews")
@@ -159,6 +167,16 @@ def get_reviews(museum_name):
 def check_login():
     return jsonify({"logged_in": 'user' in session})
 
+
+@app.route("/user/status", methods=["GET"]) # Nhận biết khi nào hiển thị avatar + username và khi nào hiển thị nút đăng nhập/đăng ký
+def user_status():
+    if "user" in session:
+        return jsonify({
+            "logged_in": True,
+            "username": session["user"],  # Lấy email từ session
+            "avatar": "default-avatar.jpg"  # Ảnh mặc định, có thể lưu vào DB nếu cần
+        })
+    return jsonify({"logged_in": False})
 
 if __name__ == "__main__":
     app.run(debug=True)

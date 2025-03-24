@@ -1,0 +1,10 @@
+Flask==3.0.0                # Framework web backend
+Flask-Cors==4.0.0           # Hỗ trợ CORS để frontend gọi API backend
+pymongo==4.5.0              # Kết nối MongoDB với Python
+dnspython==2.3.0            # Hỗ trợ kết nối MongoDB Atlas (nếu dùng)
+requests==2.31.0            # Gửi request HTTP (crawl data)
+beautifulsoup4==4.12.2      # Phân tích HTML khi crawl data
+lxml==5.1.0                 # Hỗ trợ xử lý HTML/XML
+gunicorn==21.2.0            # Chạy Flask trên server (deploy)
+selenium==4.18.1            # Tự động hóa trình duyệt
+werkzeug==3.0.1             # Bảo mật mật khẩu và tiện ích Flask
